@@ -1,0 +1,117 @@
+<Template name="home">
+
+		<span style="padding:30px;"></span>
+		<div id="header">
+		    <div class="flexslider">
+		        <ul class="slides">
+		            <li class="slider-item" style="background-image: url('/images/item-1.png')">
+		                <div class="intro container">
+		                    <div class="inner-intro">
+		                        <h1 class="header-title">
+		                            <span>traveling</span> always "good idea"
+		                        </h1>
+		                        <p class="header-sub-title">
+		                            it leaves you speecless, then turns your into a storyteller.
+		                        </p>
+		                    </div>
+		                </div>
+		            </li> <!-- /.slider-item -->
+		            <li class="slider-item" style="background-image: url('/images/item-2.png')">
+		                <div class="intro">
+		                    <div class="inner-intro">
+		                        <h1 class="header-title">
+		                            to <span>travel</span> is to <span>live</span>
+		                        </h1>
+		                        <p class="header-sub-title">
+		                            it leaves you speecless, then turns your into a storyteller.
+		                        </p>
+		                    </div>
+		                </div>
+		            </li> <!-- /.slider-item -->
+
+		            <li class="slider-item" style="background-image: url('/images/couple.png')">
+		                <div class="intro container">
+		                    <div class="inner-intro">
+		                        <h1 class="header-title">
+		                            <span>traveling</span> always "good idea"
+		                        </h1>
+		                        <p class="header-sub-title">
+		                            it leaves you speecless, then turns your into a storyteller.
+		                        </p>
+		                    </div>
+		                </div>
+		            </li> <!-- /.slider-item -->
+		        </ul> <!-- /.slides -->
+		    </div> <!-- /.flexslider -->
+		</div> <!-- /#header -->
+<!-- Find a Tour -->
+	<section class="tour section-wrapper container">
+		<h2 class="section-title">
+			Find a Tour
+		</h2>
+		<p class="section-subtitle">
+			Where would you like to go?
+		</p>
+		<div class="row">
+		    <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
+		     <div class="input-group">
+		      <input type="email" class="form-control border-radius input-search" placeholder="Search for...">
+		      <span class="input-group-btn">
+		       <button class="btn btn-default border-radius custom-sub-btn search-btn" type="button">Search</button>
+		      </span>
+		     </div><!-- /input-group -->
+		    </div>
+   		</div>
+	</section> <!-- /.tour -->
+
+
+<!-- Our Blazzing offers -->
+	<section class="offer section-wrapper">
+				<div class="container">
+					<h2 class="section-title">
+				Here is the trip today!!
+			</h2>
+			<p class="section-subtitle">
+				You can find and see all
+			</p>
+					<div class="row text-center">
+						{{#each mycontents}}
+							<div class="col-md-3 col-sm-6 hero-feature">
+								<span class="">
+									<h5>
+										<a href="/page_detail/{{_id}}">{{title}}</a>
+									</h5>
+								</span>
+								<div class="cat-bar1"></div>
+								<br />
+								<span>
+								<a href="/page_detail/{{_id}}"><img class="thumbnail" src="/images/{{getImage images }}" style="width:230px;height:240px; margin: 0 auto;"/></a>
+								</span>
+								<span style="color:black;">{{datetime}}</span>
+								<span style="color:red;">| {{price}} $</span>
+								<br />
+								 <p>
+								 <a href="/page_detail/{{_id}}">{{message}}</a>
+								</p>
+								<p class="recent-update">{{phone}}</p>
+							</div>
+						{{/each}}
+					</div> <!-- /.row -->
+				</div> <!-- /.container -->
+			</section> <!-- /.offer -->
+
+	<div class="subscribe section-wrapper">
+		<a class="brand-logo" href="index.html" title="HOME"><img src="/images/logo.png"></a>
+		
+
+
+
+		<ul class="social-icon">
+			<li><a href="#"><i class="ion-social-twitter"></i></a></li>
+			<li><a href="#"><i class="ion-social-facebook"></i></a></li>
+			<li><a href="#"><i class="ion-social-linkedin-outline"></i></a></li>
+			<li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+		</ul>
+	</div> <!-- /.subscribe -->
+
+</Template>

@@ -1,0 +1,38 @@
+<Template name="nav">
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+		<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<a class="navbar-brand" href="/" title="HOME"><img src ="/images/logo.png" style="width:240px"></a>
+			</div> <!-- /.navbar-header -->
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav pull-right">
+					<li><a href="/">Home</a></li>
+					<li><a href="/about">about</a></li>
+					{{#if loggedInUser}}
+						<li><a href="/admin">Admin</a></li>
+						<li><a href="/content">Content</a> </li>
+						<li><a href="/login" id="logout">Logout</a></li>
+					{{/if}}
+					{{#if currentUser}}
+						<li><a href="/content">Content</a></li>
+						<li><a href="/profile">Profile</a></li>
+						<li><a href="/login" id = "logout">Logout</a></li>
+					{{else}}
+						<li><a href="/register">Register</a></li>
+						<li><a href="/login">Login</a></li>
+					{{/if}}
+				</ul>
+		    </div><!-- /.navbar-collapse -->
+	  	</div><!-- /.container -->
+	</nav>
+</Template>
