@@ -8,12 +8,17 @@ Router.map(function () {
 				this.render('/login');
 			}else{
 				var loggedInUser = Meteor.user();
-				if( Roles.userIsInRole(loggedInUser, ['Normal User','Member'],'mygroup') ){
+				if( Roles.userIsInRole(loggedInUser, ['Normal User','Booker'],'mygroup') ){
 					//alert('Need to logout and Log as Admin!');
 					Bert.alert( '<h4>Your need to log as Admin First!</h4>', 'danger', 'fixed-top', 'fa-info' );
 					this.render('/home');
+				}else if( Roles.userIsInRole(loggedInUser, ['Normal User','Roomowner'],'mygroup') ){
+				//alert('Need to logout and Log as Admin!');
+				Bert.alert( '<h4>Your need to log as Admin First!</h4>', 'danger', 'fixed-top', 'fa-info' );
+				this.render('/home');
 				}else if( Roles.userIsInRole(loggedInUser, ['Admin User','Admin'],'mygroup')){
 					this.render('/admin');
+					//Router.go('/admin');
 				}
 			}
 		}
@@ -30,9 +35,9 @@ Router.map(function () {
 			}
 			else{
 				var loggedInUser = Meteor.user();
-				if( Roles.userIsInRole(loggedInUser, ['Normal User','member'],'mygroup') ){
+				if( Roles.userIsInRole(loggedInUser, ['Normal User','Booker'],'mygroup') ){
 					this.render('/');
-				}else if( Roles.userIsInRole(loggedInUser, ['Admin User','admin'],'mygroup')){
+				}else if( Roles.userIsInRole(loggedInUser, ['Admin User','Admin'],'mygroup')){
 					this.render('/adduser');
 				}
 			}

@@ -11,10 +11,10 @@ Template.register.events({
 			var username =$('#username').val();
 			var email = $('#email').val();
 			var password =$('#password').val();
-			var rerole = 'member';
+			var rerole =$('#role').val();
 			var result = users.find({email:email});
 			var msg = '';
-		if( result.count() > 0 || firstname == '' || lastname == '' || email == '' || password == ''){
+		if( result.count() > 0 || firstname == '' || lastname == '' || email == '' || password == '' || rerole == ''){
 
 			if( firstname == '' )
 				msg += 'Firt Name is required.';
@@ -24,6 +24,8 @@ Template.register.events({
 				msg += 'Email is required.';
 			if( password == '' )
 				msg += 'Password is required.';
+			if( rerole == '' )
+				msg += 'Role is required.';
 
 			if( result.count() > 0 ){
 				msg = " Email name is already exist. ";

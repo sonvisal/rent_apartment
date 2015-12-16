@@ -27,11 +27,16 @@ Template.login.events({
 				else if( currentRouter2 == 2){
 					Router.go('/profile');
 				}
-				else if (Roles.userIsInRole(loggedInUser, ['admin'], group)) {
+				else if (Roles.userIsInRole(loggedInUser, ['Admin'], group)) {
 					Router.go('/admin');
+					$('#nav').css('display','none');
 					$('.close').click();
 				}
-				else if (Roles.userIsInRole(loggedInUser, ['member'], group)) {	
+				else if (Roles.userIsInRole(loggedInUser, ['Booker'], group)) {	
+					Router.go('/');
+						$('.close').click();
+				}
+				else if (Roles.userIsInRole(loggedInUser, ['Roomowner'], group)) {	
 					Router.go('/');
 						$('.close').click();
 				}
