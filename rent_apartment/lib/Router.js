@@ -10,9 +10,6 @@ Router.route('/login',{
 Router.route('/',{
 	name:'home'
 });
-Router.route('/about',{
-	name:'about'
-});
 Router.route('/search',{
 	name:'searchcontent'
 });
@@ -25,8 +22,8 @@ Router.route('/updatecontent/:_id',{
 Router.route('/postapartment',{
 	name:'postApartment'
 });
-Router.route('/service',{
-	name:'service'
+Router.route('/roomDetail',{
+	name:'roomDetail'
 });
 Router.route('/page_detail/:_id',{
 	name:'pagedetail',

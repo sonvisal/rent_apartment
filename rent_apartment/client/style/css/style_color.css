@@ -67,7 +67,7 @@ body a{
 	position: relative;
 }
 .search-bar input[type="submit"] {
-    background: url(images/search.png)no-repeat center center;
+    background: url(../images/search.png)no-repeat 0px 0px;
     outline: none;
     -webkit-appearance: none;
     border: 0;
