@@ -1,0 +1,52 @@
+.bg_app .container .text-center input.text{
+    border: medium none;
+    background-color: rgb(251, 214, 230);
+    height: 35px;
+}
+input[type="radio"] {
+    padding: 38px;
+    box-sizing: border-box;
+    width: 40px;
+}
+div.text-center span{
+	font-size: 30px;
+}
+.bg_app .container .text-center input.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #555;
+    vertical-align: middle;
+    background-image: none;
+    border-radius: 0px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+.btn-black-log {
+    color: #FFF;
+    background-color: #050505;
+    border-color: #050404;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 30px;
+    margin-bottom: 0px;
+    font-size: 25px;
+    font-weight: normal;
+    line-height: 1.42857;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 0px;
+    -moz-user-select: none;
+}
+
+.bott{
+	padding: 20px 0px
+}

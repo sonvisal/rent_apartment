@@ -18,8 +18,8 @@
 						<li><a href="/login">Login</a></li>
 					{{/if}}
 				</ul> -->
-				
-	<div class="top-header" id="nav">
+<div id="menu">		
+	<div class="top-header">
 		<div class="container">
 			<div class="top-header-main">
 				<!-- <div class="col-md-6 top-header-left">
@@ -40,53 +40,26 @@
 			</div>
 		</div>
 	</div>
-	<div class="logo" id="nav">
+	<div class="logo">
 		<a href="index.html"><img src="images/logo.png" class="pull-left col-lg-offset-1"/></a>
 		<br>
 		<br>
 	</div>
 	<!--start-logo-->
 	<!--bottom-header-->
-	<div class="header-bottom" id="nav">
+	<div class="header-bottom">
 		<div class="container">
 			<div class="header">
 			<div class="col-md-9 header-left">
 				<div class="top-nav">
 					<ul class="memenu skyblue">
-						<li class="active"><a href="index.html">Home</a></li>
-						<li class="grid"><a href="#">Men</a>
-							<div class="mepanel">
-								<div class="row">
-									<div class="col1 me-one">
-										<h4>Popular Brands</h4>
-										<ul>
-											<li><a href="products.html">TomTom</a></li>
-											<li><a href="products.html">Titan</a></li>
-										</ul>		
-									</div>
-								</div>
-							</div>
-						</li>
-						<li class="grid"><a href="#">Women</a>
-							<div class="mepanel">
-								<div class="row">
-									<div class="col1 me-one">
-										<h4>Shop</h4>
-										<ul>
-											<li><a href="products.html">Watches</a></li>
-											<li><a href="products.html">My Shopping Bag</a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</li>
+						<li class="active"><a href="/">Home</a></li>
 							{{#if loggedInUser}}
-								<li><a href="/admin">Admin</a></li>
-								<li><a href="/content">Content</a> </li>
 								<li><a href="/login" id="logout">Logout</a></li>
 							{{/if}}
 							{{#if currentUser}}
-								<li><a href="/login" id = "logout">Booking</a></li>
+								<li><a href="/postApartment">PostApartment</a></li>
+								<li><a href="/booking">Booking</a></li>
 								<li><a href="/login" id = "logout">Logout</a></li>
 							{{else}}
 								<li><a href="/register">Register</a></li>
@@ -104,4 +77,5 @@
 	  	</div><!-- /.container -->
 	  	</div>
 	  </div>
+</div>
 </Template>

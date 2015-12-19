@@ -1,0 +1,15 @@
+.img_background{
+    background: transparent url("../images/women.png") repeat-x scroll center center;
+    height: 680px;
+    margin-top: 1px;
+    background-size: 100% auto;
+}
+.back-wh {
+    background: #FCFCFC;
+    height: 100%;
+    text-align: center;
+    padding: 25px 0px;
+    margin: 0px 10px;
+    border-radius: 100%;
+    width:50%;
+}

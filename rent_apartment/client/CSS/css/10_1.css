@@ -1,0 +1,25 @@
+.main_promot .col-xs-6{
+	
+}
+.item_left{
+	padding-left:25px;
+}
+.main_promot .col-xs-6 img{
+	border:5px solid #000;
+}
+.main_promot .col-xs-6 p{
+	font-size:14px;
+	font-weight:bold;
+	margin:10px 0px;
+}
+.hold_item_promot{
+	padding:10px;
+	overflow:hidden;
+	
+}
+.main_number_promo{
+	
+	padding:25px 0px;
+	font-size:24px;
+	font-weight:bold;
+}

@@ -1,0 +1,88 @@
+<template name="editUser">
+    <!-- {{#if currentUser}} -->
+        <div id="wrapper">
+            <!--leftside-->
+            {{> leftside }}
+
+            <div id="page-wrapper">
+
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1 class="page-header" style="color:blue">
+<!--                                 Manage Users --> 
+                            </h1>
+                            <ol class="breadcrumb">
+                                <li class="active" style="color:blue">
+                                    <i class="fa fa-dashboard"></i> Dashboard Manage Users
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                    <!-- /.row -->
+
+                       <div class="row">
+                      <div class="col-lg-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Edit User
+                            </div>
+                            <!-- /.panel-heading -->
+                            <div class="panel-body">
+                                <form role="form" id="editUsers">
+                                    <div class="form-group">
+                                        <label>First Name</label>
+                                        <input class="form-control" value="{{profile.firstname}}" name="firstname" id="firstname">
+                                    </div>
+                                   <div class="form-group">
+                                        <label>Last Name</label>
+                                        <input class="form-control" value="{{profile.lastname}}" name="lastname" id="lastname">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Emails</label>
+                                        {{#each emails}}
+                                        <input class="form-control" value="{{address}}" name="email" id="email">
+                                        {{/each}}
+                                    </div>
+                                    <div class="form-group">
+                                          <label for="selectrole">Select Role:</label>
+                                          <select class="form-control" id="role">
+                                            <option style="display:none">{{getrole roles}}</option>
+                                            {{#each allrole}}
+                                            <option value="{{name}}">{{name}}</option>
+                                            {{/each}}
+                                          </select>
+                                    </div>
+                                    <div class="form-group">
+                                          <label class="control-label">Select image:</label>
+                                        <input type="file" name="image" value="{{profile.image}}" id="image" class="your-upload-class btn btn-default"><br/>
+                                    </div>
+                                <!-- <button type="button" id="editUser" class="btn btn-primary pull-right">Update User</button> -->
+                                <input type="submit" value="Update User" class="btn btn-primary pull-right"/>
+                                </form>
+                            </div>
+                            <!-- /.panel-body -->
+                        </div>
+                        <!-- /.panel -->
+                    </div>
+                    <!-- /.col-lg-6 -->
+                  
+                    <!-- /.col-lg-6 -->
+                </div>
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- /#page-wrapper -->
+        </div>
+        <!-- /#wrapper -->
+  <!--   {{else}}
+          <center>
+           <h2 style="color:#ddd">!!! Sorry You don't have Permission to open this page</h2>
+           <h2 style="color:#ddd">Please Login First</h2>
+          </center>
+    {{/if}} -->
+   
+</template>

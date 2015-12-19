@@ -1,0 +1,326 @@
+.logo_ba{
+	padding:0px 60px;
+}
+/*--------------------Search box-----------------*/
+.search input, .search button {
+	border: none;
+	float: left;
+}
+/*.search input.box {
+	color: #fff;
+	font-size: 1.2em;
+	width: 160px;
+	height: 38px;
+	padding: 8px 5px 0;
+	background: #000000 url(search_bg.gif) no-repeat left top;
+	margin-right: 5px;
+}*/
+.search input.box {
+    color: #FFF;
+    font-size: 1.2em;
+    width: 340px;
+    height: 38px;
+    padding: 6px 8px 5px;
+    background: #000 url("search_bg.gif") no-repeat scroll left top;
+    margin-right: 5px;
+}
+.search input.box:focus {
+	background: #000000 url(search_bg.gif) no-repeat left -38px;
+	outline: none;
+}
+.search button.btn_search {
+	width: 38px;
+	height: 38px;
+	cursor: pointer;
+	text-indent: -9999px;
+	background: #000000 url(search_bg.gif) no-repeat top right;	
+	float:left;
+}
+.search button.btn_search {
+	background: #000000 url('../images/search.png') no-repeat center center;	
+}
+
+.search button.btn_search:hover {
+	background: #red url('../images/search.png') no-repeat center center;	
+}
+.btn_search{
+	-moz-user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.42857;
+	margin-bottom: 0;
+	padding: 6px 12px;
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+/*--------------------end search------------------*/
+/*---------------------Start Menu-----------------*/
+.res a.active{
+	background-color: #fff;
+	color:#000;
+}
+.res a.slow {
+	display: block;
+	font-size: 18px;
+	color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	-transform:uppercase;
+	text-align:center;
+	text-decoration:none;
+	background:#000;
+	padding:10px 20px;
+}
+.res  a.slow:hover {
+	color:#000;
+	text-decoration:none;
+	background-color:#fff;
+}
+
+@media only screen and (min-width : 320px) {
+	.bran_slow{
+		margin:-12px 0 0 -44px;
+	}
+	.bran_slow img{
+		width:104px;
+	}
+}
+/*/ Extra Small Devices, Phones /*/ 
+@media only screen and (max-width : 480px) {
+
+}
+@media only screen and (min-width : 481px) {
+
+}
+/* Screen media of menu */
+/*--------------------the end of menu----------------------------*/
+@media only screen and (min-width : 768px) {
+
+	.bg_app .container .circle_content{
+		margin: 60px 0 60px 43%;
+	}
+}
+@media only screen and (min-width : 992px) {
+	.bg_app .circle_content{
+		margin: 60px 0 60px 43%;
+	}
+}
+@media only screen and (min-width : 1200px) {
+	.big_search{
+		margin:0 auto;
+	}
+}
+/*--------------------Start Circle Content Page 2----------------------------*/
+.circle_content{
+	background-position:bottom center;
+	background-size:100% 100%;
+	margin:60px 0px;
+	text-align:center;
+	margin: 110px 0 60px 39%;
+}
+.circle1{
+	border: 8px solid #000;
+    border-radius: 50%;
+    height: 130px;
+    padding: 40px 1px;
+    width: 135px;
+	margin-bottom:30px;
+	background:#fff;
+}
+.circle1 a{
+	color:#000;
+	text-decoration:none;
+}
+.title_circle{
+	font-weight:bold;
+}
+.top_circle{
+	margin-top:100px;
+	margin-bottom:150px;
+}
+/*--------------------The end Circle Content----------------------------*/
+/*--------------------Page number 3----------------------------*/
+.title_slow{
+	font-weight:bold;
+	font-size:15px;
+}
+.big_img{
+	margin:0% 10%;
+}
+.bran1_slow{
+	margin: -2px 0px;
+	font-weight:bold;
+	padding-bottom:10px;
+}
+.title_3{
+	margin: -2px 0px;
+	font-weight:bold;
+	padding-bottom:10px;
+	margin-top:30px;
+}
+/*--------------------The end number 3----------------------------*/
+/*--------------------The Page number 4----------------------------*/
+.title_4{
+	font-weight:bold;
+}
+/*--------------------The Page number 5----------------------------*/
+.img_brand{
+	margin-bottom:60px;
+	margin-top:30px;
+}
+/*--------------------The end number 11----------------------------*/
+.title_point1{
+	font-weight:bold;
+	font-size:18px;
+	margin:-15px 3px 15px;
+}
+.big_search input, .big_search button{
+	border: none;
+	float: left;
+}
+.big_search input.big_box {
+	color: #000;
+	font-size: 1.2em;
+	height:27px;
+	padding: 8px 5px 0;
+	border:1px solid #000;
+	margin-left: 13px;
+	margin-top: 5px;
+}
+.big_search input.big_box:focus {
+	background:url(search_bg.gif) no-repeat left -38px;
+	outline: none;
+}
+.big_search button.btn_big_search {
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+	text-indent: -9999px;
+	background: #000000 url(search_bg.gif) no-repeat top right;	
+	float:left;
+}
+.big_search button.btn_big_search {
+	background:url('../imagessearch1.png') no-repeat center center;	
+}
+
+.big_search button.btn_big_search{
+	background:url('../images/search1.png') no-repeat center center;	
+}
+.btn_big_search{
+	-moz-user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.42857;
+	margin-bottom: 0;
+	padding: 6px 12px;
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+.cosmetic .big_search{
+	border:0px solid #fff;
+	background:transparent;			
+	margin:20px 0px;
+}
+.search_box{
+	margin-bottom:100px;
+}
+/*--------------------------Page 10--------------*/
+
+.item_left{
+	padding-left:25px;
+}
+.main_promot .col-xs-6 img{
+	border:5px solid #000;
+}
+.main_promot .col-xs-6 p{
+	font-size:14px;
+	font-weight:bold;
+	margin:10px 0px;
+}
+.hold_item_promot{
+	padding:10px;
+	overflow:hidden;
+	
+}
+.main_number_promo{
+	
+	padding:25px 0px;
+	font-size:24px;
+	font-weight:bold;
+}
+.percent{
+	padding:10px 0px 85px 0px;
+}
+/*--------------------------Page 12--------------*/
+.img_product img{
+	border:5px solid #000;
+}
+.img_product{
+	padding:10px 0px;
+}
+.des1{
+	padding-right:10px;
+}
+.circle3{
+	padding: 24px 1px;
+	background:url("../images/circle.png")no-repeat center;
+	background-size:70px 70px;
+}
+.small_point{
+	margin:0px 3px 1px;
+	font-weight:bold;
+	font-size:12px;
+}
+/*--------------------------Page 9--------------*/
+#call{
+	background:#00aea3;
+}
+.img_call{
+	padding: 20px 0px 0px;
+}
+.call{
+	text-align:center;
+	font-weight:bold;
+	color:#fff;
+	padding-bottom:30px;
+}
+.chat{
+	color:#000;
+	padding-bottom:30px;
+	text-align:center;
+	font-weight:bold;
+}
+.contact{
+	color:#fff;
+	padding-bottom:30px;
+	text-align:center;
+	font-weight:bold;
+	font-size:11px;
+}
+.pic_chat{
+	padding:10px 0px;
+}
+.name_chat{
+	font-weight:bold;
+	padding: 8px 1px 0 0;
+}
+.title_chat{
+	padding: 20px 1px 0 0;
+}
+
+
+
+
+
+
+
