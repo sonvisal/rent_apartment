@@ -29,8 +29,8 @@ Template.login.events({
 				}
 				else if (Roles.userIsInRole(loggedInUser, ['Admin'], group)) {
 					Router.go('/admin/dashboard');
-					//$('#nav').css('display','none');
-					//$("#footer").css('display','none');
+					$('#menu').css('display','none');
+					$("#myfooter").css('display','none');
 					$('.close').click();
 				}
 				else if (Roles.userIsInRole(loggedInUser, ['Booker'], group)) {	
