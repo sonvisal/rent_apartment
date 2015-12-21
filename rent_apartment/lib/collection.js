@@ -1,6 +1,7 @@
 users = Meteor.users;
 room= new Mongo.Collection("room");
 profile = new Mongo.Collection('profile');
+content=new Mongo.Collection('content')
 
 if (Meteor.isServer) {
 	var base_path = Meteor.npmRequire('fs').realpathSync( process.cwd() + '../../' );

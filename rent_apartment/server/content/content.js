@@ -1,6 +1,6 @@
 Meteor.methods({
 
 	addcontent:function(attr){
-        content.insert(attr);
+        return content.insert(attr);
     }
 });

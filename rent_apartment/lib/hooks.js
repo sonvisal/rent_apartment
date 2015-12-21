@@ -1,4 +1,4 @@
-var IR_BeforeHooks = {
+/* var IR_BeforeHooks = {
    
     checkLogin: function(pause) {
 		var admin_url = Router.current().url
@@ -30,15 +30,17 @@ Router.onBeforeAction(IR_BeforeHooks.checkLogin, {
 	//only: ['admin']
 	except: ['login']
 });
-}
+} */
 
 //After Hooks 
 var IR_AfterHooks = {
     checkFooter: function() {
 		var admin_url = Router.current().url
-		var result = admin_url.split('/')[1];
-		if( result == 'Admin'){
-			 $('.footer').css('display', 'none')
+		console.log("admin url "+admin_url);
+		var result = admin_url.split('/')[3];
+		console.log("result "+result);
+		if( result == 'admin'){
+			 $('#myfooter').css('display', 'none');
 			 $('#menu').css('display', 'none')
 			
 		}else{
