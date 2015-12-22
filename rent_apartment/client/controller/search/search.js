@@ -1,24 +1,29 @@
 Session.set('keyword', "");
-Template.home.events({
+Template.nav.events({
 	'click .search-btn': function(e){
 		e.preventDefault();
 		var key = $(".input-search").val();
 		Session.set('keyword', key);
 		console.log(key);
-		Router.go('/search');
+		Router.go('/search_room');
 
 	}
 
 });
 
 
-Template.searchcontent.helpers({
+Template.searchroom.helpers({
 	search_result: function(){
 		var keyword = Session.get('keyword');
 		var result = 0;
 		if( keyword != "" ){
-			result =content.find({title: {$regex: new RegExp(keyword, "i")}});
+			result =room.find({name: {$regex: new RegExp(keyword, "i")}});
 			return result;
+		}
+		else if( keyword ==""){
+			alert("Please input key that you want to search!");
+			Router.go('/');
+
 		}
 		else{
 			return ;
