@@ -17,8 +17,11 @@ Router.route('/',{
 Router.route('admin/managebooking',{
 	name:'managebooking'
 });
-Router.route('/roomDetail',{
-	name:'roomDetail'
+Router.route('/roomDetail/:_id',{
+	name:'roomDetail',
+	data: function(){
+		return room.findOne({_id:this.params._id});
+	}
 });
 Router.route('/contact',{
 	name:'contact'
