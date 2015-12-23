@@ -13,6 +13,7 @@ Template.postApartment.events({
         var img_id = Session.get('ADDIMAGEID');
         $("input").trigger("geocode");
         Meteor.call('addApartment',name,type,available_type,address,latitude,longitude,description,img_id);
+        Router.go("/admin/listapartment");
     },
     'change #image': function(event, template) {
     var files = event.target.files;
