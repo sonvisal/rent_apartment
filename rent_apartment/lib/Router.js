@@ -43,7 +43,7 @@ Router.route('admin/editUser/:_id',{
 	// name:'contentlist'
 // });
 Router.map(function () {
-	this.route('/postapartment', {
+	this.route('/admin/postApartment', {
 		name: 'postApartment',
 		onBeforeAction: function (pause) {
 			if (!Meteor.user()) {
