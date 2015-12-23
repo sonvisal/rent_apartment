@@ -1,14 +1,18 @@
 Template.postApartment.events({
-    "click #addApartment": function (e,tpl){
+    "submit form": function (e,tpl){
         e.preventDefault();
-        var name = tpl.$('#name').val();
+        var name = tpl.$('#apartmentname').val();
         var type = tpl.$('#type').val();
         var available_type = tpl.$('#available').val();
         var address = tpl.$('#address').val();
+        var longitude = tpl.$("#longitude").val();
+        var latitude = tpl.$("#latitude").val();
+        var description = e.target.editor1.value;
+        alert(description);
         var image = tpl.$('#image').val();
         var img_id = Session.get('ADDIMAGEID');
         $("input").trigger("geocode");
-        Meteor.call('addApartment',name,type,available_type,address,img_id);
+        Meteor.call('addApartment',name,type,available_type,address,latitude,longitude,description,img_id);
     },
     'change #image': function(event, template) {
     var files = event.target.files;
@@ -26,22 +30,27 @@ Template.postApartment.events({
 
 });
 
-Meteor.startup(function() {
-  GoogleMaps.load({
-    key: 'AIzaSyAK_vkvxDH5vsqGkd0Qn-dDmq-rShTA7UA ',
-    libraries: 'places'  // also accepts an array if you need more than one
+Meteor.startup(() => {
+    GoogleMaps.load({
+      key: 'AIzaSyAK_vkvxDH5vsqGkd0Qn-dDmq-rShTA7UA',
+      libraries: 'places'
+    });
   });
-});
-
 Template.postApartment.onRendered(function () {
+
     this.autorun(() => {
       // Wait for API to be loaded
       if (GoogleMaps.loaded()) {
-        // Example 2 - Autocomplete + map
+        // Example 3 - Autocomplete + map + form
         $('#address').geocomplete({
-          map: $("#map")
+          map: "#map",
+          details: "form"
         });
+
       }
     });
-
   });
+
+
+
+

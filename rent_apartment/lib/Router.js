@@ -20,6 +20,12 @@ Router.route('admin/managebooking',{
 Router.route('/roomDetail',{
 	name:'roomDetail'
 });
+Router.route('/contact',{
+	name:'contact'
+});
+Router.route('/popular',{
+	name:'popular'
+});
 Router.route('admin/editUser/:_id',{
 	name:"editUser",
 	data: function(){
