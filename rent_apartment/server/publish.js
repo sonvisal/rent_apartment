@@ -7,6 +7,9 @@ Meteor.publish('images', function (){
 Meteor.publish('content', function (){ 
   return content.find({})
 });
+Meteor.publish('room', function (){ 
+  return room.find({})
+});
 
 
 

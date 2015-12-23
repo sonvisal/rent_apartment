@@ -1,6 +1,7 @@
 Template.home.helpers({
-	mycontents: function(){
-		return content.find({});
+	myroom: function(){
+		hello = room.find({});
+		return hello;
 	},
 	getImage: function(id){
 	 var img = images.findOne({_id:id});
@@ -10,6 +11,7 @@ Template.home.helpers({
 	 }else{
 		return;
 	 }
+	 console.log(img);
  }
 });
 Template.home.events({
