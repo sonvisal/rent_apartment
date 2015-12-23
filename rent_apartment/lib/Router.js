@@ -11,7 +11,7 @@ Router.route('/login',{
 Router.route('/',{
 	name:'home'
 });
-Router.route('/postapartment',{
+Router.route('admin/postapartment',{
 	name:'postApartment'
 });
 Router.route('admin/managebooking',{
