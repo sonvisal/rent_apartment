@@ -55,13 +55,17 @@
 					<ul class="memenu skyblue">
 						<li><a href="/">Home</a></li>
 						<li><a href="/popular">Popular Booking</a></li>
-						<li><a href="/contact">Contact</a></li>
 							{{#if loggedInUser}}
+								<li><a href="/profile" >Profile</a></li>
+								<li><a href="/contact">Contact</a></li>
 								<li><a href="/login" id="logout">Logout</a></li>
 							{{/if}}
 							{{#if currentUser}}
+								<li><a href="/profile" >Profile</a></li>
+								<li><a href="/contact">Contact</a></li>
 								<li><a href="/login" id = "logout">Logout</a></li>
 							{{else}}
+								<li><a href="/contact">Contact</a></li>
 								<li><a href="/register">Register</a></li>
 								<li><a href="/login">Login</a></li>
 							{{/if}}	
@@ -71,12 +75,7 @@
 		    </div><!-- /.navbar-collapse -->
 			<div class="col-md-3 header-right"> 
 				<div class="search-bar">
-					<input type="text" class="search-query form-control input-search" placeholder="Search" />
-                    <span class="input-group-btn">
-                        <button class="btn btn-danger search-btn" type="button" style="margin: -36px 5px 0px 235px !important;">
-                            <span class=" glyphicon glyphicon-search"></span>
-                        </button>
-                    </span>
+					<input type="text" id="search" value="" placeholder="Search">
 				</div>
 			</div>
 	  	</div><!-- /.container -->

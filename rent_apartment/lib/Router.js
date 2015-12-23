@@ -32,6 +32,9 @@ Router.route('/contact',{
 Router.route('/popular',{
 	name:'popular'
 });
+Router.route('/profile',{
+	name:'profile'
+});
 Router.route('admin/editUser/:_id',{
 	name:"editUser",
 	data: function(){
