@@ -17,6 +17,13 @@ Router.route('/postapartment',{
 Router.route('/roomDetail',{
 	name:'roomDetail'
 });
+Router.route('admin/editUser/:_id',{
+	name:"editUser",
+	data: function(){
+		return users.findOne({_id:this.params._id});
+	}
+
+});
 // Router.route('/page_detail/:_id',{
 	// name:'pagedetail',
 	// data: function(){

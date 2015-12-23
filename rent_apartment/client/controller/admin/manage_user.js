@@ -84,3 +84,10 @@ Template.manageuser.onRendered( function() {
     }
   });
 });
+
+Template.editUser.events({
+"click #close":function(){
+  $("#close").close();
+}
+
+});
