@@ -31,10 +31,15 @@
                         <td data-title="Code">{{roomname}}</td>
                         <td data-title="Company">{{checkin}}</td>
                         <td data-title="Price" class="numeric">{{checkout}}</td>
-                        <td data-title="Change" class="numeric">{{username}}</td>
+                        {{#with getuserbook username}}
+                           <td data-title="Change" class="numeric">{{profile.firstname}}</td>
+                        {{/with}}
                         <td data-title="Change" class="numeric">
-                           <a href="#"><button class="btn btn-xs btn-primary" type="button"><i class="fa fa-check"></i>Accept</button></a>
-                           <button class="btn btn-xs btn-danger" type="button" id="reject"><i class="fa fa-times"></i>Reject</button>
+                           {{#if status}}
+                            <button class="btn btn-xs btn-danger" type="button" id="reject"><i class="fa fa-times"></i>Reject</button>
+                           {{else}}
+                            <a href="#"><button class="btn btn-xs btn-primary" type="button" id="accept"><i class="fa fa-check"></i>Accept</button></a>
+                           {{/if}}
                         </td>
                      </tr>
                     {{/each}}

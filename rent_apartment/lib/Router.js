@@ -35,7 +35,7 @@ Router.route('/popular',{
 Router.route('/profile',{
 	name:'profile'
 });
-Router.route('/listapartment',{
+Router.route('/admin/listapartment',{
 	name:'listApartment'
 });
 Router.route('/editApartment/:_id',{
