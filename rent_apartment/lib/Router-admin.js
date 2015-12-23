@@ -9,7 +9,7 @@ Router.route('/admin/managebrand', {
     name: 'managebrand'
 });
 Router.map(function () {
-	this.route('/admin', {
+	this.route('/admin/dashboard', {
 		name: 'dashboard',
 		onBeforeAction: function (pause) {
 			if (!Meteor.user()) {

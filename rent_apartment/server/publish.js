@@ -10,6 +10,9 @@ Meteor.publish('content', function (){
 Meteor.publish('room', function (){ 
   return room.find({})
 });
+Meteor.publish('booking', function (){ 
+  return booking.find({})
+});
 
 
 

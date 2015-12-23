@@ -26,16 +26,18 @@
                      </tr>
                   </thead>
                   <tbody>
+                  	{{#each getroombooking}}
                      <tr>
-                        <td data-title="Code">Room12B</td>
-                        <td data-title="Company">12/11/2015</td>
-                        <td data-title="Price" class="numeric">14/11/2015</td>
-                        <td data-title="Change" class="numeric">visal</td>
+                        <td data-title="Code">{{roomname}}</td>
+                        <td data-title="Company">{{checkin}}</td>
+                        <td data-title="Price" class="numeric">{{checkout}}</td>
+                        <td data-title="Change" class="numeric">{{username}}</td>
                         <td data-title="Change" class="numeric">
                            <a href="#"><button class="btn btn-xs btn-primary" type="button"><i class="fa fa-check"></i>Accept</button></a>
                            <button class="btn btn-xs btn-danger" type="button" id="reject"><i class="fa fa-times"></i>Reject</button>
                         </td>
                      </tr>
+                    {{/each}}
                   </tbody>
                </table>
             </div>

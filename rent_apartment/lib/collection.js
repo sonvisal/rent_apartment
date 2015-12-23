@@ -2,7 +2,7 @@ users = Meteor.users;
 room= new Mongo.Collection("room");
 profile = new Mongo.Collection('profile');
 content=new Mongo.Collection('content')
-
+booking=new Mongo.Collection('booking')
 if (Meteor.isServer) {
 	var base_path = Meteor.npmRequire('fs').realpathSync( process.cwd() + '../../' );
 	//console.log("upload_path:"+base_path);
