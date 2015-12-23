@@ -6,6 +6,9 @@ Meteor.methods({
             profile:{firstname:firstname,lastname:lastname,image:img_id}
            });
         Roles.setUserRoles(targetUserId, [myrole], 'mygroup')
+  },
+  delectUser:function(id){
+    return Meteor.users.remove({_id:id});
   }
 
 });

@@ -1,134 +1,119 @@
 <template name="manageuser">
-    <!-- {{#if currentUser}} -->
-        <div id="wrapper">
-            <!--leftside-->
-            {{> leftside }}
-
-            <div id="page-wrapper">
-
-                <div class="container-fluid">
-
-                    <!-- Page Heading -->
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h1 class="page-header" style="color:blue">
-<!--                                 Manage Users --> 
-                            </h1>
-                            <ol class="breadcrumb">
-                                <li class="active" style="color:blue">
-                                    <i class="fa fa-dashboard"></i> Dashboard Manage Users
-                                </li>
-                            </ol>
-                        </div>
-                    </div>
-                    <!-- /.row -->
-                    <!-- /.row -->
-
-                       <div class="row">
-                      <div class="col-lg-4">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                Add New User
-                            </div>
-                            <!-- /.panel-heading -->
-                            <div class="panel-body">
-                                <form role="form" id="addUsers">
-                                    <div class="form-group">
-                                        <label>First Name</label>
-                                        <input class="form-control" name="firstname" id="firstname">
-                                    </div>
-                                   <div class="form-group">
-                                        <label>Last Name</label>
-                                        <input class="form-control" name="lastname" id="lastname">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Emails</label>
-                                        <input class="form-control" name="email" id="email">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Password</label>
-                                        <input type="password" class="form-control" name="password" id="password">
-                                    </div>
-                                    <div class="form-group">
-                                          <label for="selectrole">Select Role:</label>
-                                          <select class="form-control" id="selectrole">
-                                            {{#each listRole}}
-                                            <option value="{{name}}">{{name}}</option>
-                                            {{/each}}
-                                          </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label">Select image:</label>
-                                        <input type="file" name="image" id="image" class="your-upload-class btn btn-default"><br/>
-                                    </div>
-                                <!-- <button type="button" id="addUser" class="btn btn-primary pull-right">Add User</button> -->
-                                <input type="submit" value="Add User" class="btn btn-primary pull-right">
-            
-                                </form>
-                            </div>
-                            <!-- /.panel-body -->
-                        </div>
-                        <!-- /.panel -->
-                    </div>
-                    <div class="col-lg-8">
-                       <div class="widget-box">
-                <div class="widget-title">
-                    <h2 style="color:gray">List User</h2>
-                </div>
-                <div class="widget-container table-responsive">
-                    <table class="table table-hover table-striped order-table table-green">
-                    <thead>
-                        <tr>
-                            
-                            <th>#</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Email</th>
-                            <th>Role</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {{#each userInfo}}
-                        <tr>
-                            <td>#</td>
-                            <td>{{profile.firstname}}</td>
-                            <td>{{profile.lastname}}</td>
-                            {{#each emails}}
-                            <td>{{address}}</td>
-                            {{/each}}
-                            <td>{{getrole roles}}</td>
-                            
-                            <td>
-                                <!-- <button class="btn btn-xs btn-primary" type="button"><i class="glyphicon glyphicon-eye-open"></i>View</button> -->
-                                <a href="editUser/{{_id}}"><button class="btn btn-xs btn-primary" type="button"><i class="glyphicon glyphicon-pencil"></i>Edit</button></a>
-
-                                <button class="btn btn-xs btn-danger" type="button" id="remove"><i class="glyphicon glyphicon-remove"></i>Delete</button>
-                                
-                            </td>
-                        </tr>
-                        {{/each}}
-                        
-                    </tbody>
-                </table>    
-                </div>
+    <div id="wrapper">
+   <!--leftside-->
+   {{> leftside }}
+   <div id="page-wrapper">
+      <div class="container-fluid">
+         <!-- Page Heading -->
+         <div class="row">
+            <div class="col-lg-12">
+               <h1 class="page-header" style="color:blue">
+                  <!--                                 Manage Users --> 
+               </h1>
+               <ol class="breadcrumb">
+                  <li class="active" style="color:blue">
+                     <i class="fa fa-dashboard"></i> Dashboard Manage Users
+                  </li>
+               </ol>
             </div>
-                        <!-- /.panel -->
-                    </div>
-                    <!-- /.col-lg-6 -->
-                  
-                    <!-- /.col-lg-6 -->
-                </div>
-                </div>
-                <!-- /.container-fluid -->
+         </div>
+         <!-- /.row -->
+         <!-- /.row -->
+         <div class="row">
+            <div class="col-lg-4">
+               <div class="panel panel-default">
+                  <div class="panel-heading">
+                     Add New User
+                  </div>
+                  <!-- /.panel-heading -->
+                  <div class="panel-body">
+                     <form role="form" id="addUsers">
+                        <div class="form-group">
+                           <label>First Name</label>
+                           <input class="form-control" name="firstname" id="firstname">
+                        </div>
+                        <div class="form-group">
+                           <label>Last Name</label>
+                           <input class="form-control" name="lastname" id="lastname">
+                        </div>
+                        <div class="form-group">
+                           <label>Emails</label>
+                           <input class="form-control" name="email" id="email">
+                        </div>
+                        <div class="form-group">
+                           <label>Password</label>
+                           <input type="password" class="form-control" name="password" id="password">
+                        </div>
+                        <div class="form-group">
+                           <label for="selectrole">Select Role:</label>
+                           <select class="form-control" id="selectrole">
+                              <!-- {{#each listRole}}
+                                 <option value="{{name}}">{{name}}</option>
+                                 {{/each}} -->
+                              <option value="Admin">Admin</option>
+                              <option value="Booker">Booker</option>
+                              <option value="Roomowner">Room owner</option>
+                           </select>
+                        </div>
+                        <div class="form-group">
+                           <label class="control-label">Select image:</label>
+                           <input type="file" name="image" id="image" class="your-upload-class btn btn-default"><br/>
+                        </div>
+                        <!-- <button type="button" id="addUser" class="btn btn-primary pull-right">Add User</button> -->
+                        <input type="submit" value="Add User" class="btn btn-primary pull-right">
+                     </form>
+                  </div>
+                  <!-- /.panel-body -->
+               </div>
+               <!-- /.panel -->
             </div>
-            <!-- /#page-wrapper -->
-        </div>
-        <!-- /#wrapper -->
-  <!--   {{else}}
-          <center>
-           <h2 style="color:#ddd">!!! Sorry You don't have Permission to open this page</h2>
-           <h2 style="color:#ddd">Please Login First</h2>
-          </center>
-    {{/if}} -->
+            <div class="col-lg-8">
+               <div class="widget-box">
+                  <div class="widget-title">
+                     <h2 style="color:gray">List User</h2>
+                  </div>
+                  <div class="widget-container table-responsive">
+                     <table class="table table-hover table-striped order-table table-green">
+                        <thead>
+                           <tr>
+                              <th>Picture Profile</th>
+                              <th>First Name</th>
+                              <th>Last Name</th>
+                              <th>Email</th>
+                              <th>Role</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           {{#each userInfo}}
+                           <tr>
+                              <td><img src="/images/{{getImage profile.image}}" width="75px" height="75px"/></td>
+                              <td>{{profile.firstname}}</td>
+                              <td>{{profile.lastname}}</td>
+                              {{#each emails}}
+                              <td>{{address}}</td>
+                              {{/each}}
+                              <td>{{getrole roles}}</td>
+                              <td>
+                                 <!-- <button class="btn btn-xs btn-primary" type="button"><i class="glyphicon glyphicon-eye-open"></i>View</button> -->
+                                 <a href="editUser/{{_id}}"><button class="btn btn-xs btn-primary" type="button"><i class="glyphicon glyphicon-pencil"></i>Edit</button></a>
+                                 <button class="btn btn-xs btn-danger" type="button" id="remove"><i class="glyphicon glyphicon-remove"></i>Delete</button>
+                              </td>
+                           </tr>
+                           {{/each}}
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+               <!-- /.panel -->
+            </div>
+            <!-- /.col-lg-6 -->
+            <!-- /.col-lg-6 -->
+         </div>
+      </div>
+      <!-- /.container-fluid -->
+   </div>
+   <!-- /#page-wrapper -->
+</div>
+<!-- /#wrapper -->
    
 </template>

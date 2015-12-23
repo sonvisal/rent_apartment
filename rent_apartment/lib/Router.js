@@ -14,6 +14,9 @@ Router.route('/',{
 Router.route('/postapartment',{
 	name:'postApartment'
 });
+Router.route('admin/managebooking',{
+	name:'managebooking'
+});
 Router.route('/roomDetail',{
 	name:'roomDetail'
 });
