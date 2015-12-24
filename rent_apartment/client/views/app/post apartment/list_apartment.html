@@ -1,0 +1,52 @@
+<template name="listApartment">
+<div id="wrapper">
+      {{> leftside }}
+		
+	<div id="page-wrapper">
+      <div class="container-fluid">
+         <!-- Page Heading -->
+        <div class="row">
+            <div class="col-md-12">
+               <h1 class="text-center">
+                  NO Table 
+               </h1>
+			   <span style="padding:30px"></span>
+               <h3 class="text-center">
+                 Manage Appartment posted
+               </h3>
+			   <span style="padding:30px"></span>
+            </div>
+            <div id="no-more-tables">
+               <table class="col-md-12 table-bordered table-striped table-condensed cf">
+                  <thead class="cf">
+                    <tr>
+						<th>Apartment Name</th>
+						<th>Address</th>
+						<th>Available Type</th>
+						<th>Apartment Type</th>
+						<th>Description</th>
+						<th>Action</th>
+					</tr>
+                  </thead>
+					<tbody>
+						{{#each getPost}}
+							<tr>
+                              <td>{{name}}</td>
+                              <td>{{location}}</td>
+                              <td>{{available_type}}</td>
+                              <td>{{type}}</td>
+                              <td>{{{description}}}</td>
+                              <td>
+                                 <a href="/editapartment/{{_id}}"><button class="btn btn-xs btn-primary" type="button"><i class="glyphicon glyphicon-pencil"></i>Edit</button></a>|<button class="btn btn-xs btn-danger" type="button" id="delectapartment"><i class="fa fa-times"></i>Delect</button>
+                              </td>
+							</tr>
+                        {{/each}}
+					</tbody>
+               </table>
+            </div>
+         </div>
+      </div>
+	</div>
+	</div>
+    <!-- /#page-wrapper -->
+</template>

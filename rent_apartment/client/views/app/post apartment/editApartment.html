@@ -1,0 +1,72 @@
+<template name="editApartment">
+   <div id="wrapper">
+      <!--leftside-->
+      {{> leftside }}
+      <div id="page-wrapper">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-sm-6 col-sm-offset-3">
+                  <h4 class="page-header">Add Apartment</h4>
+                  <form id="addApartment">
+                     <div class="form-group">
+                        <label for="apartmentName">Apartment Name</label>
+                        <input type="text" name="apartmentname" id="apartmentname" value="{{name}}" class="form-control">
+                     </div>
+                     <div class="form-group">
+                        <label>Apartment Type</label>
+                        <select id="type" class="form-control">
+                           <option value="{{type}}">{{type}}</option>
+                           <option>Villa</option>
+                           <option>BA</option>
+                           <option>Hut</option>
+                        </select>
+                     </div>
+                     <div class="form-group">
+                        <label>Available Type</label>
+                        <select id="available" class="form-control">
+                           <option value="{{available_type}}">{{available_type}}</option>
+                           <option>Small</option>
+                           <option>Medium</option>
+                           <option>Big</option>
+                        </select>
+                     </div>
+                     <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" name="address" value="{{location}}" class="form-control"><br/>
+                        <div id="map"></div>
+                     </div>
+                     <div style="display:none;" class="input-group">
+                        <label>Latitude</label>
+                        <input name="lat" id="latitude" type="text">
+                     </div>
+                     <div class="input-group" style="display:none;">
+                        <label>Longitude</label>
+                        <input name="lng" id="longitude" type="text">
+                     </div>
+                     <div class="form-group">
+                        <textarea name="editor1" id="editor1" value="{{description}}" rows="10" cols="80">
+                  
+               </textarea>
+                        <script>
+                           // Replace the <textarea id="editor1"> with a CKEditor
+                           // instance, using default configuration.
+                           CKEDITOR.replace( 'editor1' );
+                        </script>
+                     </div>
+                     <div class="form-group">
+                        <label>Select image</label>
+                        <input type="file" name="image" id="image" class="your-upload-class btn btn-default">
+                     </div>
+                     <div class="form-group">
+                        <input type="submit" id="updateApartment" class="btn btn-success btn-block" value="Update Apartment">
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+         <!-- /.container-fluid -->
+      </div>
+      <!-- /#page-wrapper -->
+   </div>
+   <!-- /#wrapper -->
+</template>
