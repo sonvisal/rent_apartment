@@ -1,0 +1,35 @@
+<template name="listApartment">
+   <div class="row">
+      <div class="col-sm-12">
+         <div class="container">
+            <h4 class="page-header">List Apartments</h4>
+            <table class="table table-bordered">
+               <thead>
+                  <tr>
+                     <th>Apartment Name</th>
+                     <th>Address</th>
+                     <th>Available Type</th>
+                     <th>Apartment Type</th>
+                     <th>Description</th>
+                      <th>Action</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  {{#each getPost}}
+                     <tr>
+                        <td>{{name}}</td>
+                        <td>{{location}}</td>
+                        <td>{{available_type}}</td>
+                        <td>{{type}}</td>
+                        <td>{{description}}</td>
+                        <td>
+                            <a href="/editapartment/{{_id}}"><button class="btn btn-xs btn-primary" type="button"><i class="glyphicon glyphicon-pencil"></i>Edit</button></a>
+                        </td>
+                     </tr>
+                  {{/each}}
+               </tbody>
+            </table>
+         </div>
+      </div>
+   </div>
+</template>

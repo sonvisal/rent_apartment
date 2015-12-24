@@ -1,6 +1,13 @@
-Template.postApartment.events({
+Template.editApartment.helpers({
+    getPost:function(){
+        return room.find({});
+    }
+});
+
+Template.editApartment.events({
     "submit form": function (e,tpl){
         e.preventDefault();
+        var id = this._id;
         var name = tpl.$('#apartmentname').val();
         var type = tpl.$('#type').val();
         var available_type = tpl.$('#available').val();
@@ -8,26 +15,12 @@ Template.postApartment.events({
         var longitude = tpl.$("#longitude").val();
         var latitude = tpl.$("#latitude").val();
         var description = e.target.editor1.value;
-        alert(description);
         var image = tpl.$('#image').val();
         var img_id = Session.get('ADDIMAGEID');
         $("input").trigger("geocode");
-        Meteor.call('addApartment',name,type,available_type,address,latitude,longitude,description,img_id);
-    },
-    'change #image': function(event, template) {
-    var files = event.target.files;
-    for (var i = 0, ln = files.length; i < ln; i++) {
-      images.insert(files[i], function (err, fileObj) {
-        // Inserted new doc with ID fileObj._id, and kicked off the data upload using HTTP
-       // alert("sess"+fileObj._id)
-        Session.set('ADDIMAGEID', fileObj._id);
-       /* Meteor._reload.onMigrate(function() {
-        return [false];
-    });*/
-      });
+        Meteor.call('editApartments',id, name,type,available_type,address,latitude,longitude,description,img_id);
+        Router.go('/listapartment');
     }
-}
-
 });
 
 Meteor.startup(() => {
@@ -36,7 +29,7 @@ Meteor.startup(() => {
       libraries: 'places'
     });
   });
-Template.postApartment.onRendered(function () {
+Template.editApartment.onRendered(function () {
 
     this.autorun(() => {
       // Wait for API to be loaded
@@ -50,5 +43,4 @@ Template.postApartment.onRendered(function () {
       }
     });
   });
-
 
