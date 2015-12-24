@@ -1,3 +1,4 @@
+
 Session.set('ADDIMAGEID','');
 Template.listApartment.helpers({
     getPost:function(){

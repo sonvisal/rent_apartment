@@ -3,3 +3,4 @@
  Meteor.subscribe("images");
  Meteor.subscribe("room");
  Meteor.subscribe("booking");
+

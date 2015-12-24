@@ -35,6 +35,15 @@ Router.route('/popular',{
 Router.route('/profile',{
 	name:'profile'
 });
+Router.route('/admin/listapartment',{
+	name:'listApartment'
+});
+Router.route('/editApartment/:_id',{
+	name:"editApartment",
+	data: function(){
+		return room.findOne({_id:this.params._id});
+	}
+});
 Router.route('admin/editUser/:_id',{
 	name:"editUser",
 	data: function(){
