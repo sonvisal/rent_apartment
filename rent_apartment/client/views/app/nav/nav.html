@@ -53,15 +53,19 @@
 			<div class="col-md-9 header-left">
 				<div class="top-nav">
 					<ul class="memenu skyblue">
-						<li class="active"><a href="/">Home</a></li>
+						<li><a href="/">Home</a></li>
+						<li><a href="/popular">Popular Booking</a></li>
 							{{#if loggedInUser}}
+								<li><a href="/profile" >Profile</a></li>
+								<li><a href="/contact">Contact</a></li>
 								<li><a href="/login" id="logout">Logout</a></li>
 							{{/if}}
 							{{#if currentUser}}
-								<li><a href="/postApartment">PostApartment</a></li>
-								<li><a href="/booking">Booking</a></li>
+								<li><a href="/profile" >Profile</a></li>
+								<li><a href="/contact">Contact</a></li>
 								<li><a href="/login" id = "logout">Logout</a></li>
 							{{else}}
+								<li><a href="/contact">Contact</a></li>
 								<li><a href="/register">Register</a></li>
 								<li><a href="/login">Login</a></li>
 							{{/if}}	

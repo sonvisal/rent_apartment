@@ -11,11 +11,29 @@ Router.route('/login',{
 Router.route('/',{
 	name:'home'
 });
-Router.route('/postapartment',{
-	name:'postApartment'
+Router.route('/search_room',{
+	name:'searchroom'
 });
-Router.route('/roomDetail',{
-	name:'roomDetail'
+// Router.route('admin/postapartment',{
+// 	name:'postApartment'
+// });
+Router.route('admin/managebooking',{
+	name:'managebooking'
+});
+Router.route('/roomDetail/:_id',{
+	name:'roomDetail',
+	data: function(){
+		return room.findOne({_id:this.params._id});
+	}
+});
+Router.route('/contact',{
+	name:'contact'
+});
+Router.route('/popular',{
+	name:'popular'
+});
+Router.route('/profile',{
+	name:'profile'
 });
 Router.route('/listapartment',{
 	name:'listApartment'
@@ -42,20 +60,20 @@ Router.route('admin/editUser/:_id',{
 // Router.route('/contentlist',{
 	// name:'contentlist'
 // });
-// Router.map(function () {
-	// this.route('/content', {
-		// name: 'content',
-		// onBeforeAction: function (pause) {
-			// if (!Meteor.user()) {
-				// // render the login template but keep the url in the browser the same
-				// Session.set('content',1);
-				// this.render('login');
-			// } else {
-				// this.next();
-			// }
-		// }
-	// })
-// });
+Router.map(function () {
+	this.route('/admin/postApartment', {
+		name: 'postApartment',
+		onBeforeAction: function (pause) {
+			if (!Meteor.user()) {
+				// render the login template but keep the url in the browser the same
+				Session.set('postApartment',1);
+				this.render('login');
+			} else {
+				this.next();
+			}
+		}
+	})
+});
 // Router.map(function () {
 	// this.route('/profile', {
 		// name: 'profile',

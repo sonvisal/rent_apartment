@@ -24,7 +24,13 @@ Template.manageuser.events({
         Session.set('ADDIMAGEID', fileObj._id);
       });
     }
+  },
+  "click #remove": function(e, tpl) {
+    e.preventDefault();
+    var id = this._id;
+    Meteor.call('delectUser',id);
   }
+  
 });
 
 //Show all users info
@@ -37,7 +43,16 @@ Template.manageuser.helpers({
     },
     getrole: function(per){
         return per.mygroup[0];
+    },
+    getImage: function(id){
+    var img = images.findOne({_id:id});
+    if(img){
+    console.log(img.copies.images.key);
+    return img.copies.images.key;
+    }else{
+    return;
     }
+  }
 });
 
 Template.manageuser.onRendered( function() {
@@ -86,8 +101,8 @@ Template.manageuser.onRendered( function() {
 });
 
 Template.editUser.events({
-"click #close":function(){
-  $("#close").close();
+"click #close":function(e){
+  e.preventDefault();
+  Router.go("/admin/manageuser");
 }
-
 });

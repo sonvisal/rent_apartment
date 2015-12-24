@@ -2,11 +2,12 @@
 	
 		<span style="padding:30px;"></span>
 			<!--map-start-->
+			<hr>
 		<div class="bnr" id="home">
 		<div  id="top" class="callbacks_container">
 			<ul class="rslides" id="slider4">
 			    <div class="item active col-lg-12">
-			      <img src="images/1.jpg" alt="...">
+			    
 			      <div class="carousel-caption">
 			          <h3>Caption Text</h3>
 			      </div>
@@ -50,15 +51,29 @@
 				<div class="col-md-8 about-left">
 			
 					<div class="infor-top">
-						<div class="col-md-4 infor-left">
-							<img class="img-responsive" src="images/6.jpg" alt="" style="width:80px; height:80px;">
+						<div class="col-md-12 infor-left">
+						<h2>Apartment Detail</h2>
+						</div>	
+
+						<div class="col-md-6 infor-left">
+							<a href="" class="mask"><img class="img-responsive zoom-img" src="/images/{{getImage image}}"/></a>
 						</div>
-						<div class="col-md-8 infor-left">
-							<p>Addresses : </p>
+						<div class="col-md-6 infor-left">
+							
+							<p>Apartment Name : {{name}} </p>
+							<br>
+							<p>Apartment Type : {{type}} </p>
+							<br>
+							<p>Available Type : {{available_type}} </p>
+							<br>
+							<p>Description : {{{description}}} </p>
+							<br>
+							<p>Location : {{location}} </p>
 						</div>
 						<div class="clearfix"></div>
 					
 				</div>
+				
 					<h4>About this listing</h4>
 					<br>
 					<p>Fantastic view from to Tonlè Sap river (in front of riverside). 400 meters of Sokha Hotel casino.
@@ -223,7 +238,7 @@ Apartment of 72 sqm (with 28 sqm terrace), panoramic view on the river. The apar
 		
 				</div>
 				<div class="col-md-4 about-left">
-					<div class="sngl-top">
+					<!-- <div class="sngl-top">
 					
 					<div class="col-md-12">	
 						<div class="flexslider">
@@ -239,8 +254,8 @@ Apartment of 72 sqm (with 28 sqm terrace), panoramic view on the river. The apar
 								</li> 
 							  </ul>
 						</div>
-						<!-- FlexSlider
-						<script src="js/imagezoom.js"></script> -->
+						 FlexSlider
+						<script src="js/imagezoom.js"></script> 
 						<script defer src="js/jquery.flexslider.js"></script>
 						<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
 
@@ -257,7 +272,7 @@ Apartment of 72 sqm (with 28 sqm terrace), panoramic view on the river. The apar
 					
 					
 					<div class="clearfix"> </div>
-				</div>
+				</div>-->
 				<span style="padding:30px;"></span>
 				<div class="modal-body">
 					<div class="panel panel-success">
@@ -273,29 +288,40 @@ Apartment of 72 sqm (with 28 sqm terrace), panoramic view on the river. The apar
 							<br>
 						</div>
 						<div class="panel-body">
-							<form accept-charset="UTF-8" role="form">
+							<form>
 								<fieldset>
 									<div class="form-group">
-									<div class="col-md-4">
-										 <label for="checkin"><h6>Check In</h6></label>
-										<input class="col-lg-4 form-control" placeholder="" name="checkin" type="text">
-									</div>
-									<div class="col-md-4">
-										 <label for="checkout"><h6>Check Out</h6></label>
-										<input class="form-control" placeholder="" name="checkout" type="text">
-									</div>
-									<div class="col-md-4">
-										 <label for="guest"><h6>Guests</h6></label>
-										  <select class="form-control" id="sel1">
+									 
+									 <div class="col-md-12 input-group datetimepicker">
+									    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+									    <input class="set-due-date form-control" name="checkin" id="checkin" type="text" placeholder="Check In"/>
+									 </div>
+									 <br>
+									 <div class="col-md-12 input-group datetimepicker">
+									    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+									    <input class="set-due-date form-control" name="checkout" id="checkout" type="text" placeholder="Check Out"/>
+									 </div>
+									 <p style="display:none;" id="apartmentname">{{name}}</p>
+									 <br>
+									 <div class="col-md-12">
+										 <div class=" col-md-4">
+										 	<button type="button" class="btn btn-success">Guests</button>
+										 </div>
+										 <div class=" col-md-8">
+										  <select class="form-control" id="sel1" >
 											<option>1</option>
 											<option>2</option>
 											<option>3</option>
 											<option>4</option>
+											<option>5</option>
 										  </select>
-										  <br>
+										</div>
+										<br>
+										  
+									 </div>
 									</div>
-									</div>
-								
+									<br>
+									<br>
 									<div class="form-group">
 									<table class="table">
 									  <tbody>
@@ -319,7 +345,7 @@ Apartment of 72 sqm (with 28 sqm terrace), panoramic view on the river. The apar
 									</div>
 									
 										<div class="form-group">
-											<input type="submit" value="Request to Book" class="col-md-12 btn btn-success">
+											<input type="submit" value="Request to Book" class="col-md-12 btn btn-success" id="booking">
 										</div>
 									<br>
 									</fieldset>
@@ -357,10 +383,27 @@ Apartment of 72 sqm (with 28 sqm terrace), panoramic view on the river. The apar
 					 <div class="map">
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6632.248000703498!2d151.265683!3d-33.7832959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12abc7edcbeb07%3A0x5017d681632bfc0!2sManly+Vale+NSW+2093%2C+Australia!5e0!3m2!1sen!2sin!4v1433329298259" style="border:0; height:300px;"></iframe>
 				</div>
+				<br>
+				<div class="col-md-12">
+					<div class="col-md-12">
+						<a href="" class="mask"><img class="img-responsive zoom-img" src="/images/{{getImage image}}"/></a>
+					</div>
+
+				</div>
+				<div class="col-md-12">
+					<div class="col-md-6">
+						<a href="" class="mask"><img class="img-responsive zoom-img" src="/images/{{getImage image}}"/></a>
+
+					</div>
+					<div class="col-md-6">
+						<a href="" class="mask"><img class="img-responsive zoom-img" src="/images/{{getImage image}}"/></a>
+					</div>
+				</div>
 				</div>
 				
 				<div class="clearfix"></div>
 			</div>
 		</div>
 		<span style="padding:30px;"></span>
+		<br>
 </template>
